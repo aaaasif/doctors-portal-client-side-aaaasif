@@ -11,7 +11,7 @@ const Booking = ({ booking, date }) => {
     const handleBookingOpen = () => setBookingOpen(true);
     const handleBookingClose = () => setBookingOpen(false);
     return (
-        <div>
+        <>
             <Grid item xs={12} sm={6} md={4}>
                 <Paper elevation={3} sx={{ py: 5 }}>
                     <Typography sx={{ color: 'info.main', fontWeight: 600 }} variant="h5" gutterBottom component="div">
@@ -32,7 +32,7 @@ const Booking = ({ booking, date }) => {
                 openBooking={openBooking}
                 handleBookingClose={handleBookingClose}
             ></BookingModal>
-        </div>
+        </>
     );
 };
 
