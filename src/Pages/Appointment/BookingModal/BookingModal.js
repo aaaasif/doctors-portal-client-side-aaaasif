@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -23,6 +23,17 @@ const style = {
 const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
     const { name, time } = booking;
     const {user} = useAuth()
+    const initialInfo= { patientName: user.displayName, email: user.email, phone:''}
+    const [bookingInfo, setBookingInfo] = useState(initialInfo);
+
+    const handleOnBlur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newInfo = { ...bookingInfo};
+        newInfo[field] = value;
+        console.log(newInfo);
+        setBookingInfo(newInfo);
+    }
 
     const handleBookingSubmit = e => {
         alert('submitting');
@@ -62,19 +73,25 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                         <TextField
                             sx={{ width: '90%', m: 1 }}
                             id="outlined-size-small"
+                            name='patientName'
                             defaultValue={user.displayName}
+                            onBlur={handleOnBlur}
                             size="small"
                         />
                         <TextField
                             sx={{ width: '90%', m: 1 }}
                             id="outlined-size-small"
+                            name='email'
                             defaultValue={user.email}
+                            onBlur={handleOnBlur}
                             size="small"
                         />
                         <TextField
                             sx={{ width: '90%', m: 1 }}
                             id="outlined-size-small"
+                            name='phone'
                             defaultValue="Phone Number"
+                            onBlur={handleOnBlur}
                             size="small"
                         />
                         <TextField
