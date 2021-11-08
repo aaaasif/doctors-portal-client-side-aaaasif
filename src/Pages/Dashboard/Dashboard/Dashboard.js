@@ -129,17 +129,17 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-          <Switch>
-        <Route exact path={path}>
-          <DashboardHome></DashboardHome>
-        </Route>
-        <Route path={`${path}/makeAdmin`}>
-          <MakeAdmin></MakeAdmin>
-        </Route>
-        <Route path={`${path}/addDoctor`}>
-          <AddDoctor></AddDoctor>
-        </Route>
-      </Switch>
+        <Switch>
+          <Route exact path={path}>
+            <DashboardHome></DashboardHome>
+          </Route>
+          <Route path={`${path}/makeAdmin`}>
+            <MakeAdmin></MakeAdmin>
+          </Route>
+          <Route path={`${path}/addDoctor`}>
+            <AddDoctor></AddDoctor>
+          </Route>
+        </Switch>
       </Box>
     </Box>
   );
