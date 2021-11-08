@@ -55,7 +55,10 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
              .then((result) => {
                const user = result.user;
+               saveUser(user.email, user.displayName, 'PUT');
                setAuthError(" ");
+               const destination = location?.state?.from || '/';
+                history.replace(destination);
              }).catch((error) => {
                 setAuthError(error.message);
              }).finally(() => setIsLoading(false));
