@@ -26,6 +26,7 @@ import {
 } from "react-router-dom";
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddDoctor from '../AddDoctor/AddDoctor';
 
 
 const drawerWidth = 200;
@@ -134,6 +135,9 @@ function Dashboard(props) {
         </Route>
         <Route path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
+        </Route>
+        <Route path={`${path}/addDoctor`}>
+          <AddDoctor></AddDoctor>
         </Route>
       </Switch>
       </Box>
