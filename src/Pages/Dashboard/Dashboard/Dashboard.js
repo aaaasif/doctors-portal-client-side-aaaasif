@@ -18,6 +18,8 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Calendar from '../../Shared/Calendar/Calendar';
 import Appointments from '../Appointments/Appointments';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 const drawerWidth = 200;
@@ -35,6 +37,7 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
+      <Link to="/appointment"><Button color="inherit">Appointment</Button></Link>
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
