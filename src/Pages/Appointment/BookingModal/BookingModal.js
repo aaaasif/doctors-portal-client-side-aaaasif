@@ -45,7 +45,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date,setBookin
         }
         // console.log(appointment);
         // send to the server
-        fetch('http://localhost:5000/appointments', {
+        fetch('https://doctor-portal-server-site.herokuapp.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

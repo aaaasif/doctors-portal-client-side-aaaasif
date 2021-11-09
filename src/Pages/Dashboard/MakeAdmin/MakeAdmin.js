@@ -1,4 +1,4 @@
-import { Button, TextField, spacing, Alert } from '@mui/material';
+import { Button, TextField, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 
@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://doctor-portal-server-site.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

@@ -17,11 +17,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  useParams,
   useRouteMatch
 } from "react-router-dom";
 import DashboardHome from '../DashboardHome/DashboardHome';
