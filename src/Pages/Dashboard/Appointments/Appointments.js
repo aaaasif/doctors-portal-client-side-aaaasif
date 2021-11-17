@@ -14,7 +14,7 @@ const Appointments = ({ date }) => {
     console.log(appointments)
     
     useEffect(() => {
-        const url = `https://doctor-portal-server-site.herokuapp.com/appointments?email=${user.email}&date=${date}`
+        const url = `https://doctor-portal-server-site.herokuapp.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
         fetch(url, {
           headers: {
                 'authorization': `Bearer ${token}`
